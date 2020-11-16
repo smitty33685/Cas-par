@@ -1,0 +1,128 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@100;400&family=Roboto:ital,wght@0,400;1,100&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@100;400&family=Roboto:wght@100;400&display=swap");
+.container {
+  max-width: 1100px;
+  margin: auto;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  color: #333;
+  font-family: "Poppins", sans-serif;
+}
+
+p {
+  color: #666;
+  font-family: "Roboto", sans-serif;
+}
+
+a {
+  text-decoration: none;
+  font-family: "Roboto", sans-serif;
+}
+
+ul {
+  list-style: none;
+}
+
+.btn-primary {
+  display: inline-block;
+  color: #fff;
+  background: #db4d2a;
+  border-radius: 1rem;
+  padding: 1rem 3rem;
+  transition: all 0.2s ease-out;
+}
+
+.btn-primary:hover {
+  background: #02022c;
+}
+
+@media (max-width: 900px) {
+  .navbar .nav-list {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 50vh;
+    width: 100%;
+    background: #c6c6c6;
+    z-index: -1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    transform: translateY(-100%);
+    transition: all 0.4s ease-out;
+    border-bottom: 1px solid #888;
+  }
+  .navbar .nav-list li {
+    margin: 0.5rem 0;
+  }
+  .navbar .burger {
+    display: block;
+  }
+  .navbar .active {
+    transform: translateY(0%);
+  }
+  .showcase {
+    grid-template-columns: 1fr;
+    margin-bottom: 250px;
+  }
+  .showcase .showcase-content {
+    order: 2;
+    text-align: center;
+  }
+  .showcase .showcase-content h1 {
+    font-size: 2rem;
+  }
+  .showcase .showcase-content a {
+    align-self: center;
+  }
+  .showcase .showcase-image {
+    order: 1;
+    margin-top: 4rem;
+  }
+  .showcase .showcase-image img {
+    height: 300px;
+    width: auto;
+  }
+  .about-me {
+    margin-top: 150px;
+  }
+  .about-me .btn-primary {
+    text-align: center;
+  }
+  .about-me .grid {
+    grid-template-columns: 1fr;
+  }
+  .about-me .grid img {
+    display: none;
+  }
+  .about-me .grid .about-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 1rem 0;
+    text-align: center;
+  }
+  .about-me .grid .about-content .grid-area .grid-item {
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+  }
+  .team .grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 500px) {
+  .team .grid {
+    grid-template-columns: 1fr;
+  }
+}
+/*# sourceMappingURL=mobile.css.map */

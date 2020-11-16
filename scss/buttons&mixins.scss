@@ -1,0 +1,42 @@
+@import "variables";
+
+//Buttons
+.btn-primary {
+    display: inline-block;
+    color: #fff;
+    background: $primary-color;
+    border-radius: 1rem;
+    padding: 1rem 3rem;
+    transition: all 0.2s ease-out;
+
+    &:hover {
+        background: #02022c;
+    }
+}
+
+//Mixins
+@mixin Flexbox {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+@mixin Heading {
+    @include Flexbox;
+    width: 60%;
+    margin: auto;
+    text-align: center;
+    margin-bottom: 80px;
+
+    h2 {
+        font-size: 2rem;
+    }
+
+    .line {
+        width: 70px;
+        height: 5px;
+        background: $primary-color;
+        margin: 0.7rem 0;
+    }
+}

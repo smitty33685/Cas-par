@@ -1,0 +1,112 @@
+@import "buttons&mixins";
+
+
+//Max-widh: 900
+@media(max-width: 900px) {
+    .navbar {
+        .nav-list {
+            position: fixed;
+            top: 0;
+            left: 0;
+            height: 50vh;
+            width: 100%;
+            background: #c6c6c6;
+            z-index: -1;
+            @include Flexbox;
+            transform: translateY(-100%);
+            transition: all 0.4s ease-out;
+            border-bottom: 1px solid #888;
+
+
+            li {
+                margin: 0.5rem 0;
+            }
+        }
+
+        .burger {
+            display: block;
+        }
+
+        .active {
+            transform: translateY(0%);
+        }
+    }
+
+    .showcase {
+        grid-template-columns: 1fr;
+        margin-bottom: 250px;
+
+        .showcase-content {
+            order: 2;
+            text-align: center;
+
+            h1 {
+                font-size: 2rem;
+            }
+
+            a {
+                align-self: center;
+            }
+        }
+
+        .showcase-image {
+            order: 1;
+            margin-top: 4rem;
+
+            img {
+                height: 300px;
+                width: auto;
+            }
+        }
+    }
+
+    .about-me {
+        margin-top: 150px;
+
+        .btn-primary {
+            text-align: center;
+        }
+
+        .grid {
+            grid-template-columns: 1fr;
+
+            img {
+                display: none;
+            }
+
+            .about-content {
+                @include Flexbox;
+                padding: 1rem 0;
+                text-align: center;
+
+                .grid-area {
+
+                    // text-align: center;
+                    .grid-item {
+                        flex-direction: column;
+                        justify-content: center;
+                        text-align: center;
+                    }
+                }
+            }
+        }
+    }
+
+    .team {
+
+        .grid {
+            grid-template-columns: repeat(2, 1fr);
+        }
+    }
+}
+
+//Max-width: 500
+@media(max-width: 500px) {
+    .team {
+
+        .grid {
+            grid-template-columns: 1fr;
+        }
+
+    }
+}

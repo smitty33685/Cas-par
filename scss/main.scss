@@ -1,0 +1,285 @@
+@import "variables";
+@import "buttons&mixins";
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    line-height: 1.5;
+    color: #000;
+}
+
+//Navbar
+.navbar {
+    position: sticky;
+    top: 0;
+    width: 100%;
+    z-index: 5;
+    transition: all 0.3s ease-out;
+
+    .burger {
+        position: absolute;
+        top: 1.3rem;
+        right: 2rem;
+        display: none;
+        cursor: pointer;
+
+        i {
+            font-size: 1.5rem;
+        }
+    }
+
+    .container {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 1.3rem 2rem;
+
+        .logo {
+            text-transform: uppercase;
+
+            .logo-primary {
+                color: $primary-color;
+            }
+        }
+
+        .nav-list {
+            display: flex;
+
+            a {
+                margin: 0 0.7rem;
+                padding-bottom: 0.3rem;
+                text-transform: uppercase;
+                color: $dark-color;
+                font-weight: 700;
+
+                &:hover {
+                    color: $primary-color;
+                    border-bottom: 3px $primary-color solid;
+                    border-radius: 4px;
+                }
+            }
+        }
+    }
+}
+
+//Showcase
+.showcase {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: 20px;
+    padding: 0 2rem;
+    height: 90vh;
+    margin-bottom: 150px;
+
+    .showcase-content {
+        @include Flexbox;
+
+        h1 {
+            margin-bottom: 1.5rem;
+            font-size: 3rem;
+        }
+
+        p {
+            margin-bottom: 2rem;
+        }
+
+        a {
+            align-self: flex-start;
+        }
+    }
+
+    .showcase-image {
+        @include Flexbox;
+
+        img {
+            width: 80%;
+            border-radius: 30px;
+        }
+    }
+}
+
+//Section: About Me
+.about-me {
+    margin-bottom: 150px;
+
+    .about-me-heading {
+        @include Heading;
+    }
+
+    .grid {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        padding: 0 2rem;
+
+        // .about-image {
+        img {
+            width: 90%;
+            border-radius: 30px;
+        }
+
+        //}
+
+        .about-content {
+            padding: 1rem 2rem;
+
+            h3 {
+                font-size: 1.8rem;
+                margin-bottom: 1.5rem;
+            }
+
+            .grid-area {
+                display: grid;
+                grid-template-areas:
+                    "a b"
+                    "c d";
+                margin: 1.5rem 0;
+                grid-gap: 10px;
+
+                &:nth-child(1) {
+                    grid-area: a;
+                }
+
+                &:nth-child(2) {
+                    grid-area: b;
+                }
+
+                &:nth-child(3) {
+                    grid-area: c;
+                }
+
+                &:nth-child(4) {
+                    grid-area: d;
+                }
+
+                .grid-item {
+                    display: flex;
+                    align-items: center;
+                    padding: 1rem;
+
+                    &>div {
+                        padding: 0 0.8rem;
+                    }
+
+                    i {
+                        font-size: 2.5rem;
+                    }
+                }
+            }
+        }
+    }
+}
+
+//Section: Team
+.team {
+    margin-bottom: 150px;
+
+    .team-heading {
+        @include Heading;
+    }
+
+    .grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        grid-gap: 30px;
+        padding: 0 2rem;
+
+        &>div {
+            position: relative;
+            overflow: hidden;
+            background: $lightdark-color;
+            border-radius: 30px;
+
+
+            &:hover .overlay {
+                transform: translateY(0%);
+                transition: all 0.3s ease-out;
+            }
+        }
+
+        img {
+            width: 100%;
+            cursor: pointer;
+            border-radius: 30px 0 0;
+        }
+
+        h3 {
+            text-align: center;
+            margin: 1rem 0 0.5rem;
+        }
+
+        p {
+            text-align: center;
+            text-transform: uppercase;
+            color: $primary-color;
+            font-weight: bold;
+            padding-bottom: 1rem;
+        }
+
+        .overlay {
+            position: absolute;
+            top: 0;
+            right: 0;
+            left: 0;
+            bottom: 0;
+            background: rgba(0, 0, 0, 0.6);
+            @include Flexbox;
+            cursor: pointer;
+            border-radius: 30px;
+            transform: translateY(110%);
+
+            .icons {
+                font-size: 3rem;
+                color: #fff;
+
+                i:hover {
+                    color: $primary-color;
+                }
+            }
+        }
+    }
+}
+
+//Section: Our Work
+.work {
+    margin-bottom: 50px;
+
+    .work-heading {
+        @include Heading;
+    }
+
+    .grid {
+        padding: 0 2rem;
+        display: grid;
+        grid-gap: 10px;
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+
+        img {
+            width: 100%;
+            transition: all 0.2s ease-in;
+
+            &:hover {
+                cursor: pointer;
+                transform: scale(1.04);
+            }
+        }
+
+        &>div {
+            @include Flexbox;
+            height: 100%;
+        }
+    }
+}
+
+//Footer 
+.footer {
+    text-align: center;
+    padding: 2rem;
+    background: $dark-color;
+    color: $lightdark-color;
+}
+
+@import 'mobile';
